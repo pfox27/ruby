@@ -31,11 +31,12 @@ class StdClass
 			$factorial = $factorial * $counter
 			$counter++
 			
-		end
+		
 		puts "The value of the factorial is: "
 		puts $factorial
+	
 	end
-end
 
 x = StdClass.new
+
 
