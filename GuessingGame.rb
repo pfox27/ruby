@@ -1,4 +1,4 @@
-#  SimpleLoop.rb
+#  GuessingGame.rb
 #  
 #  Copyright 2026 Paul Fox <paulfox@Paul-Fox-Air.local>
 #  
@@ -21,24 +21,36 @@
 
 
 class StdClass
+	def initialize
+		# Number Guessing Game using a while loop
 
-  def initialize
-    puts "Enter the number for which you'd like the factorial computed: "
-    number = gets.to_i
-    factorial = 1
-    counter = 1
-		
-while counter <= number 
-  factorial = factorial * counter
-  counter+=1
-end
-		
-  puts "The value of the factorial is: "
-  puts factorial
-	
+# Generate a random number between 1 and 10
+secret_number = rand(1..10)
 
+guess = 0
+attempts = 0
+
+puts "Welcome to the Number Guessing Game!"
+puts "Guess a number between 1 and 10."
+
+# While loop continues until the correct guess
+while guess != secret_number
+  print "Enter your guess: "
+  guess = gets.to_i
+  attempts += 1
+
+  if guess < secret_number
+    puts "Too low! Try again."
+  elsif guess > secret_number
+    puts "Too high! Try again."
+  else
+    puts "Correct! You guessed the number in #{attempts} attempts."
   end
 end
-x = StdClass.new
 
+puts "Thanks for playing!"
+	end
+end
+
+x = StdClass.new
 
